@@ -1,0 +1,10 @@
+package com.tintucgiaothong.data.service;
+
+import java.util.List;
+
+import com.tintucgiaothong.data.domain.NoiDung;
+
+public interface CheckUserService {
+	List<NoiDung> getAllByUsername(String username);// ---- In tat ca du lieu da post len
+	boolean deleteNoiDung(String username,long id); // ---- Xoa noi dung muon xoa cua minh
+}

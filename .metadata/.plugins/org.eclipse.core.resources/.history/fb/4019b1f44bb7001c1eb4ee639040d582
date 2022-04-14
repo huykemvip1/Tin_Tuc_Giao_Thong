@@ -1,0 +1,5 @@
+package com.tintucgiaothong.data.exception;
+
+public class CodeException {
+
+}

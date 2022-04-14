@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostActivity"
+    android:background="@drawable/background">
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.tintucgiaothong.ToolbarActivity"
+        android:id="@+id/fr_toolbar_3"/>
+    <TextView
+        android:id="@+id/dangbai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:layout_below="@id/fr_toolbar_3"
+        android:text="Đăng bài"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dangbai"
+        android:layout_marginTop="70dp"
+        android:textSize="25dp"
+        android:text="Viết gì đó"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white" />
+
+    <EditText
+        android:id="@+id/post_context"
+        android:layout_width="338dp"
+        android:layout_height="203dp"
+        android:layout_below="@id/dangbai"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        android:background="@drawable/bd_input"
+        android:hint="Noi Dung viet chi tiet dum t cai ok !!!!!!!" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/post_context"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="Đường Dẫn"
+        android:textColor="@color/white"
+        android:textSize="20dp"/>
+
+    <EditText
+        android:id="@+id/link"
+        android:layout_width="340dp"
+        android:layout_height="34dp"
+        android:layout_below="@+id/post_context"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/bd_input"
+        android:gravity="center"
+        android:hint="F:// halo" />
+
+    <ImageButton
+        android:id="@+id/btn_image"
+        android:layout_width="82dp"
+        android:layout_height="62dp"
+        android:layout_below="@+id/link"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/transparent"
+        android:onClick="postImage"
+        android:src="@drawable/ic_camera" />
+    <RadioGroup
+        android:id="@+id/topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_image"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true" >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/topic_th"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tình Hình Giao Thông" />
+
+            <RadioButton
+                android:id="@+id/topic_tt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="Tin Tức Giao Thông" />
+        </RelativeLayout>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_upload"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/topic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bd_input"
+        android:text="Đăng Bài"
+        android:onClick="uploadFile"/>
+
+</RelativeLayout>

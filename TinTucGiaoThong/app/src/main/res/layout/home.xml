@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.tintucgiaothong.ToolbarActivity"
+        android:id="@+id/fr_toolbar_1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_toolbar_1"
+        android:layout_marginTop="1dp"
+        android:text="Tình Hình Giao Thông"
+        android:textColor="@color/white"
+        android:textSize="30dp"/>
+
+    <LinearLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_toolbar_1"
+        android:layout_marginTop="43dp">
+
+        <ImageButton
+            android:id="@+id/btn_left_th"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="120dp"
+            android:background="@drawable/ic_arrow_left"
+            android:onClick="left_th"
+            android:scaleType="center" />
+
+        <RelativeLayout
+            android:layout_width="170dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="181dp"
+                android:layout_height="202dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_account" />
+
+            <TextView
+                android:id="@+id/creator_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_1"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Nguyen Dinh Huy"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/context_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/day_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/creator_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="25-07-1998 12-31"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/details_btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/day_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Chi Tiết"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="170dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="181dp"
+                android:layout_height="202dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_account" />
+
+            <TextView
+                android:id="@+id/creator_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_2"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Nguyen Dinh Huy"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/day_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/creator_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="25-07-1998 12-31"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/context_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/details_btn_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/day_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Chi Tiết"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/btn_right_th"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="120dp"
+            android:background="@drawable/ic_arrow_right"
+            android:onClick="right_th"
+            android:scaleType="center" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_1"
+        android:layout_marginTop="1dp"
+        android:text="Tin Tức Giao Thông"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_toolbar_1"
+        android:layout_marginTop="385dp">
+
+        <ImageButton
+            android:id="@+id/btn_left_tt"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="120dp"
+            android:background="@drawable/ic_arrow_left"
+            android:scaleType="center"
+            android:onClick="left_tt"/>
+
+        <RelativeLayout
+            android:layout_width="170dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="181dp"
+                android:layout_height="202dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_account" />
+
+            <TextView
+                android:id="@+id/creator_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_3"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Nguyen Dinh Huy"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/context_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/day_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/creator_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="25-07-1998 12-31"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/details_btn_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/day_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Chi Tiết"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="170dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_4"
+                android:layout_width="181dp"
+                android:layout_height="202dp"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_account" />
+
+            <TextView
+                android:id="@+id/creator_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_4"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Nguyen Dinh Huy"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/day_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/creator_4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="25-07-1998 12-31"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/context_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/details_btn_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/day_4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="Chi Tiết"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:id="@+id/btn_right_tt"
+            android:layout_width="24dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="120dp"
+            android:background="@drawable/ic_arrow_right"
+            android:scaleType="center"
+            android:onClick="right_tt"/>
+    </LinearLayout>
+</RelativeLayout>

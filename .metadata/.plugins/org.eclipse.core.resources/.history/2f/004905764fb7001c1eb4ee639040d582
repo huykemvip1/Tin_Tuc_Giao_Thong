@@ -1,0 +1,10 @@
+package com.tintucgiaothong.data.aop;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class LocationCheck {
+	public void check(String code) {
+		
+	}
+}

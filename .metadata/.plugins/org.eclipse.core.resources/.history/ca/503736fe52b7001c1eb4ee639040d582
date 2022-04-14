@@ -1,0 +1,35 @@
+package com.tintucgiaothong.data.aop;
+
+import java.util.Optional;
+
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.codec.CodecException;
+import org.springframework.stereotype.Component;
+
+import com.tintucgiaothong.data.Repository.MaTheoDoiRepo;
+import com.tintucgiaothong.data.domain.MaTheoDoi;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Component
+@Aspect
+@Slf4j
+public class CheckAspect {
+	@Autowired
+	private MaTheoDoiRepo maTheoDoiRepo;
+	@Around("execution(* *.*(..)) && @annotation(checkMaTheoDoi)")
+	public void check(ProceedingJoinPoint proceedingJoinPoint,CheckMaTheoDoi checkMaTheoDoi) throws Throwable {
+		
+		Optional<MaTheoDoi> maTheoDoi=maTheoDoiRepo.findByCode(checkMaTheoDoi.code());
+		log.info(checkMaTheoDoi.code()+"");
+		if (maTheoDoi.isEmpty()) {
+			throw new CodecException("Ma Code Error");
+		}else {
+			proceedingJoinPoint.proceed();
+		}
+	}
+}

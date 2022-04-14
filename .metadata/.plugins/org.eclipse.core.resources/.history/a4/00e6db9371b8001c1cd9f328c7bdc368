@@ -1,0 +1,84 @@
+package com.tintucgiaothong.data.service;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
+
+import javax.persistence.EntityExistsException;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tintucgiaothong.data.Repository.MaTheoDoiRepo;
+import com.tintucgiaothong.data.Repository.NguoiDungRepo;
+import com.tintucgiaothong.data.domain.MaTheoDoi;
+import com.tintucgiaothong.data.domain.NguoiDung;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+@Transactional
+public class NoCheckServiceImp implements NoCheckService{
+	@Autowired
+	private NguoiDungRepo nguoiDungRepo;
+	@Autowired
+	private MaTheoDoiRepo maTheoDoiRepo;
+	
+	
+	
+	@Override
+	public MaTheoDoi checkUser(String username, String password) {
+		
+		Optional<NguoiDung> nguoiDung=nguoiDungRepo.findByUsername(username);
+		
+		if (nguoiDung.isEmpty()) {
+			return null;
+		}
+		if(nguoiDung.get().getPassword().equals(password)) {
+			
+			return createCode(nguoiDung.get());
+		}else {
+			return null;
+		}
+	}
+
+	@Override
+	public boolean addUser(NguoiDung nguoiDung) {
+		Optional<NguoiDung> checkND=nguoiDungRepo.findByUsername(nguoiDung.getUsername());
+		if(checkND.isEmpty()) {
+			nguoiDungRepo.save(nguoiDung);
+			return true;
+		}
+		return false;
+	}
+	// ---- tao ma theo doi moi
+	private MaTheoDoi createCode(NguoiDung nguoiDung) {
+		// --- Tao chuoi random
+		int min=97;
+		int max=122;
+		StringBuilder chuoi=new StringBuilder(6);
+		Random random=new Random();
+		for (int i=0 ; i< 6;i++) {
+			int kytu=(int)(random.nextDouble() * (max-min))+min;
+			chuoi.append((char) kytu);
+		}
+		
+		MaTheoDoi maTheoDoi=new MaTheoDoi();
+		maTheoDoi.setUsername(nguoiDung.getUsername());
+		maTheoDoi.setNguoiDung(nguoiDung);
+		maTheoDoi.setCode(chuoi.toString());
+		maTheoDoiRepo.resetId();
+		return maTheoDoiRepo.save(maTheoDoi);
+	}
+
+	@Override
+	public void checkMaTheoDoi(String username) {
+		Optional<MaTheoDoi> maTheoDois=maTheoDoiRepo.findByUsername(username);
+		if (maTheoDois.isPresent()) {
+			maTheoDoiRepo.delete(maTheoDois.get());
+		}
+	}
+
+}

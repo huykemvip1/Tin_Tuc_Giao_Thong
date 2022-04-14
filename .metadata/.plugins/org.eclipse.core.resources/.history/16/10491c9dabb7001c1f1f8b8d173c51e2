@@ -1,0 +1,5 @@
+package com.tintucgiaothong.data.Repository;
+
+public class SequenceCustom {
+
+}

@@ -1,0 +1,10 @@
+package com.tintucgiaothong.data.service;
+
+import java.util.List;
+
+import com.tintucgiaothong.data.domain.NoiDung;
+
+public interface CheckService {
+	List<NoiDung> getDataTwo(long id,String chude); // ---- dua 2 du lieu noi dung  ra ngoai
+	boolean insertData(NoiDung noiDung); // add du lieu noi dung vao database
+}

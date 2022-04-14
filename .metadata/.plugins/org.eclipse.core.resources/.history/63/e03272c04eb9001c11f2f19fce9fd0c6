@@ -1,0 +1,22 @@
+package com.tintucgiaothong.data.Repository;
+
+import java.util.List;
+
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+
+import com.tintucgiaothong.data.domain.NguoiDung;
+import com.tintucgiaothong.data.domain.NoiDung;
+
+public interface NoiDungRepo extends CrudRepository<NoiDung, Long>{
+	List<NoiDung> findAll();
+	@Query("select n from NoiDung n where n.nguoiDung = :nguoiDung")
+	List<NoiDung> findNoiDungByUser(@Param("nguoiDung") NguoiDung nguoiDung);
+	@Modifying
+	@Query(nativeQuery = true,
+	       value = "delete from noidung where id= :id" )
+	void deleteNoiDungById(@Param("id") long id);
+}

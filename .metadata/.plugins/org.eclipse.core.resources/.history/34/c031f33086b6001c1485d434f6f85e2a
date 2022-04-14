@@ -1,0 +1,24 @@
+package com.tintucgiaothong.data.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.tintucgiaothong.data.domain.NoiDung;
+
+@Service
+public class CheckUserServiceImp implements CheckUserService{
+
+	@Override
+	public List<NoiDung> getAllByUsername(String username) {
+		
+		return null;
+	}
+
+	@Override
+	public boolean deleteNoiDung(String username, long id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.tintucgiaothong.data.aop;
+
+public class LocationCheck {
+
+}

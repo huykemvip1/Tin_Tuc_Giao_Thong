@@ -1,0 +1,11 @@
+package com.tintucgiaothong.data.service;
+
+import java.util.List;
+
+import com.tintucgiaothong.data.domain.NoiDung;
+
+public interface CheckService {
+	List<NoiDung> getDataTwo(long id,String chude);
+	boolean insertData(NoiDung noiDung);
+	String testImage();
+}

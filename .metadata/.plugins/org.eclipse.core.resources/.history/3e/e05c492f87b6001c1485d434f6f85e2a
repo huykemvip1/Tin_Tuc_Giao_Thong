@@ -1,0 +1,33 @@
+package com.tintucgiaothong.data.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tintucgiaothong.data.Repository.ChuDeRepo;
+import com.tintucgiaothong.data.Repository.NguoiDungRepo;
+import com.tintucgiaothong.data.Repository.NoiDungRepo;
+import com.tintucgiaothong.data.domain.NoiDung;
+
+@Service
+public class CheckUserServiceImp implements CheckUserService{
+	@Autowired
+	private NoiDungRepo noiDungRepo;
+	@Autowired
+	private ChuDeRepo chuDeRepo;
+	@Autowired
+	private NguoiDungRepo nguoiDungRepo;
+	@Override
+	public List<NoiDung> getAllByUsername(String username) {
+		
+		return null;
+	}
+
+	@Override
+	public boolean deleteNoiDung(String username, long id) {
+		
+		return false;
+	}
+
+}
