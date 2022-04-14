@@ -10,6 +10,10 @@
                 android:title="Trang chủ"
                 android:icon="@drawable/ic_home"
                 app:showAsAction="ifRoom" />
+            <item android:id="@+id/it_profile"
+                android:title="Hồ sơ cá nhân"
+                android:icon="@drawable/ic_username"
+                app:showAsAction="ifRoom"/>
             <item android:id="@+id/it_post"
                 android:title="Đăng bài"
                 android:icon="@drawable/ic_post"

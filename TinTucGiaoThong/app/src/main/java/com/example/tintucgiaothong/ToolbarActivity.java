@@ -92,6 +92,11 @@ public class ToolbarActivity extends Fragment {
         intent.setClass(this.view.getContext(),PostActivity.class);
         startActivity(intent);
     }
+    public void toProfile(){
+        Intent intent=new Intent();
+        intent.setClass(this.view.getContext(), ProfileActivity.class);
+        startActivity(intent);
+    }
 
     class Backend_ToLogin extends AsyncTask<String , InputStream, Void>{
         ToolbarActivity toolbarActivity;

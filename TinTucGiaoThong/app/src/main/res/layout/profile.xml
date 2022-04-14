@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity"
+    android:background="@drawable/background">
+    <fragment
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.tintucgiaothong.ToolbarActivity"
+        android:id="@+id/fr_toolbar_4"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fr_toolbar_4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Thông Tin Cá Nhân"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+    <TextView
+        android:id="@+id/p_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_toolbar_4"
+        android:layout_marginTop="60dp"
+        android:text="Bài Đã Đăng"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:onClick="toDetailsStatus"/>
+
+    <EditText
+        android:id="@+id/p_username"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/p_details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:text="Username"
+        android:drawableLeft="@drawable/ic_username"
+        android:drawablePadding="10dp"/>
+
+    <EditText
+        android:id="@+id/p_password"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/p_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:inputType="textPassword"
+        android:text="password"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:id="@+id/p_re_enter_password"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/p_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:inputType="textPassword"
+        android:text="password"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="10dp"/>
+
+    <EditText
+        android:id="@+id/p_fullname"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/p_re_enter_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:text="Nguyen Dinh Huy"
+        android:drawableLeft="@drawable/ic_username"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:id="@+id/p_email"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/p_fullname"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:text="huykemvip@gmail.com"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:id="@+id/p_birthday"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/p_email"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:text="1998-07-25"
+        android:drawableLeft="@drawable/ic_birthday"
+        android:drawablePadding="10dp"
+        android:hint="1998-07-25"/>
+
+    <EditText
+        android:id="@+id/p_sex"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/p_birthday"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bd_input"
+        android:gravity="center"
+        android:text="Nam" />
+    <TextView
+        android:id="@+id/p_mess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/p_sex"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/reptile_green"
+        android:text="Save Success !!!"
+        android:layout_centerHorizontal="true"
+        />
+    <Button
+        android:layout_width="142dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/p_mess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_btn_color"
+        android:onClick="saveNguoiDung"
+        android:text="Save"
+        android:textColor="@color/white"/>
+
+
+</RelativeLayout>
