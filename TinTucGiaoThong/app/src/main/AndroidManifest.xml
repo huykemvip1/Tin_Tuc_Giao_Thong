@@ -21,20 +21,20 @@
         android:theme="@style/Theme.TinTucGiaoThong"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".ProfileActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".PostedActivity"
+            android:exported="false" >
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false">
         </activity>
         <activity
             android:name=".ForgotAccount"
             android:exported="false" />
         <activity
             android:name=".PostActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".DetailsActivity"
             android:exported="false" />

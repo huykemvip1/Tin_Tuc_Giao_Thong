@@ -13,16 +13,18 @@ public class NguoiDung {
     private String username;
     private String password;
     private String fullname;
-    private LocalDate birthDay;
+    private String birthDay;
     private String sex;
+    private String email;
 
-    public NguoiDung(long id, String username, String password, String fullname, LocalDate birthDay, String sex) {
+    public NguoiDung(long id, String username, String password, String fullname, String birthDay, String sex,String email) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.fullname = fullname;
         this.birthDay = birthDay;
         this.sex = sex;
+        this.email=email;
     }
 
     public long getId() {
@@ -57,11 +59,11 @@ public class NguoiDung {
         this.fullname = fullname;
     }
 
-    public LocalDate getBirthDay() {
+    public String getBirthDay() {
         return birthDay;
     }
 
-    public void setBirthDay(LocalDate birthDay) {
+    public void setBirthDay(String birthDay) {
         this.birthDay = birthDay;
     }
 
@@ -71,5 +73,13 @@ public class NguoiDung {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

@@ -32,13 +32,50 @@ public class CheckUserServiceImp implements CheckUserService{
 	}
 
 	@Override
-	public boolean deleteNoiDung(String username, long id) {
-		Optional<NguoiDung> nguoiDung=nguoiDungRepo.findByUsername(username);
-		if (nguoiDung.isEmpty()) {
+	public boolean deleteNoiDung(long id) {
+		Optional<NoiDung> noiDung=noiDungRepo.findById(id);
+		if (noiDung.isEmpty()) {
 			return false;
 		}else {
-			noiDungRepo.deleteNoiDungById(id);
+			noiDungRepo.delete(noiDung.get());
+			noiDungRepo.resetID();
 			return true;
+		}
+		
+	}
+
+	@Override
+	public NguoiDung updateUser(NguoiDung nguoiDung) {
+		Optional<NguoiDung> findND=nguoiDungRepo.findByUsername(nguoiDung.getUsername());
+		if (findND.isEmpty()) {
+			return null;
+		}else {
+			
+			if (nguoiDung.getEmail() == null || nguoiDung.getEmail().equals("")) {
+				return null;
+			}
+			if(nguoiDung.getPassword() == null || nguoiDung.getPassword().equals("")) {
+				return null;
+			}
+			if(nguoiDung.getSex() == null || nguoiDung.getSex().equals("")) {
+				return null;
+			}
+		
+			
+			nguoiDung.setVaiTro(findND.get().getVaiTro());
+			nguoiDung.setId(findND.get().getId());
+			nguoiDungRepo.save(nguoiDung);
+			return nguoiDung;
+		}
+	}
+
+	@Override
+	public NguoiDung findNguoiDung(String username) {
+		Optional<NguoiDung> findND=nguoiDungRepo.findByUsername(username);
+		if(findND.isEmpty()) {
+			return null;
+		}else {
+			return findND.get();
 		}
 		
 	}

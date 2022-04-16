@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
      EditText password;
      String text="";
      NavigationClass navigationClass;
+     TextView mess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         Button bt_dangky=findViewById(R.id.bt_dangky);
         username=findViewById(R.id.login_username);
         password=findViewById(R.id.login_password);
+        mess=findViewById(R.id.failure);
         navigationClass=new NavigationClass();
             bt_dangky.setOnClickListener(view -> {
                navigationClass.toRegister(this);
@@ -79,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
     }
     // ------------ Back end
-     class ConnectBackEnd extends AsyncTask<String,String,String> {
+     class ConnectBackEnd extends AsyncTask<String,String[],String> {
         LoginActivity loginActivity;
         public ConnectBackEnd(LoginActivity loginActivity){
             this.loginActivity=loginActivity;
@@ -100,7 +102,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (urlConnection.getErrorStream() != null) {
-                    publishProgress("");
+                    String string[]=new String[1];
+                    string[0]="";
+                    publishProgress(string);
                     return null;
                 }else{
 
@@ -114,9 +118,13 @@ public class LoginActivity extends AppCompatActivity {
                         stringBuilder.append(ch);
                     }
                     JSONObject jsonObject=new JSONObject(stringBuilder.toString());
+                    String string[]=new String[2];
+                    string[0]=jsonObject.getString("code");
+                    string[1]=jsonObject
+                            .getJSONObject("nguoiDung")
+                            .getJSONObject("vaiTro").getString("ten");
 
-                    publishProgress(jsonObject.getString("code"));
-
+                    publishProgress(string);
                     return null;
                 }
             }  catch (IOException | JSONException e) {
@@ -130,15 +138,18 @@ public class LoginActivity extends AppCompatActivity {
             return null;
         }
         @Override
-        protected void onProgressUpdate(String... progress) {
-            text=progress[0];
-            if (text == null || text == ""){
-                Toast.makeText(loginActivity.getApplicationContext(),"Username and Password is incorrect",Toast.LENGTH_SHORT).show();
-            }else{
+        protected void onProgressUpdate(String[]... progress) {
+            String string[]=progress[0];
 
+            if (string.length <= 1){
+                mess.setVisibility(View.VISIBLE);
+            }else{
+                String code=string[0];
+                String role=string[1];
                 SharedPreferences sharedPref = getSharedPreferences("my_security", MODE_PRIVATE);
-                sharedPref.edit().putString("token",progress[0]).commit();
+                sharedPref.edit().putString("token",code).commit();
                 sharedPref.edit().putString("username",username.getText().toString()).commit();
+                sharedPref.edit().putString("role", role).commit();
                 navigationClass.toHome(loginActivity.getApplicationContext());
             }
         }

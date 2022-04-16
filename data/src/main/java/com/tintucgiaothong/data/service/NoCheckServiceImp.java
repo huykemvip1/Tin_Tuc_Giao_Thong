@@ -15,6 +15,7 @@ import com.tintucgiaothong.data.Repository.MaTheoDoiRepo;
 import com.tintucgiaothong.data.Repository.NguoiDungRepo;
 import com.tintucgiaothong.data.domain.MaTheoDoi;
 import com.tintucgiaothong.data.domain.NguoiDung;
+import com.tintucgiaothong.data.domain.VaiTro;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -51,6 +52,10 @@ public class NoCheckServiceImp implements NoCheckService{
 	public boolean addUser(NguoiDung nguoiDung) {
 		Optional<NguoiDung> checkND=nguoiDungRepo.findByUsername(nguoiDung.getUsername());
 		if(checkND.isEmpty()) {
+			VaiTro vaiTro=new VaiTro();
+			vaiTro.setId(3);
+			vaiTro.setTen("user");
+			nguoiDung.setVaiTro(vaiTro);
 			nguoiDungRepo.save(nguoiDung);
 			return true;
 		}

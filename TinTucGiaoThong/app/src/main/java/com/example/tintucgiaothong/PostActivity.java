@@ -62,8 +62,17 @@ public class PostActivity extends AppCompatActivity {
         select=findViewById(R.id.topic);
         tinh_hinh=findViewById(R.id.topic_th);
         tin_tuc=findViewById(R.id.topic_tt);
+        SharedPreferences sharedPreferences=getSharedPreferences("my_security", Context.MODE_PRIVATE);
 
+        if (sharedPreferences.getString("role", "").equals("manager")
+                || sharedPreferences.getString("role", "").equals("admin")){
 
+        }else{
+            select.setVisibility(View.INVISIBLE);
+            select.layout(0, 0, 0, 0);
+            tinh_hinh.setVisibility(View.INVISIBLE);
+            tin_tuc.setVisibility(View.INVISIBLE);
+        }
     }
     public void uploadFile(View view){
         SharedPreferences sharedPreferences=getSharedPreferences("my_security", Context.MODE_PRIVATE);
@@ -72,12 +81,19 @@ public class PostActivity extends AppCompatActivity {
         noiDung.setUsername(sharedPreferences.getString("username",""));
         //-----------------
 
-        if (tinh_hinh.isChecked()){
+        if (sharedPreferences.getString("role", "").equals("manager")
+                || sharedPreferences.getString("role", "").equals("admin")){
+            if (tinh_hinh.isChecked()){
+                noiDung.setChude("Tinh Hinh Giao Thong");
+            }
+            if (tin_tuc.isChecked()){
+                noiDung.setChude("Tin Tuc Giao Thong");
+            }
+        }else{
+
             noiDung.setChude("Tinh Hinh Giao Thong");
         }
-        if (tin_tuc.isChecked()){
-            noiDung.setChude("Tin Tuc Giao Thong");
-        }
+
         //-------------------
         Backend_PostActivity backend_postActivity=new Backend_PostActivity(this);
 
@@ -183,11 +199,11 @@ public class PostActivity extends AppCompatActivity {
             if (inputStream != null){
                 Toast.makeText(postActivity.getApplicationContext(),
                         "Failure !!!",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
             }else{
                 Toast.makeText(postActivity.getApplicationContext(),
                         "Success !!!",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
             }
         }
     }

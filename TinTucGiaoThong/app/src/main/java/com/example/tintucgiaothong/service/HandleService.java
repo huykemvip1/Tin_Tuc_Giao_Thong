@@ -6,6 +6,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.Base64;
 import android.widget.ImageView;
 
+import com.example.tintucgiaothong.R;
+
 import java.io.ByteArrayOutputStream;
 
 public class HandleService {

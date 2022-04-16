@@ -63,8 +63,8 @@ public class DataApplication implements CommandLineRunner{
 		/*
 		String url = "http://localhost:8080/api/ttgt/login";
 		HttpHeaders headers = new HttpHeaders();
-		headers.set("username","vanhiep");
-		headers.set("password","vanhiep");
+		headers.set("username","ngochuy");
+		headers.set("password","ngochuy");
 		HttpEntity<String> entity = new HttpEntity<>("body", headers);
 		RestTemplate restTemplate=new RestTemplate();
 		ResponseEntity<MaTheoDoi> responseEntity=restTemplate.exchange(url,HttpMethod.GET,entity,MaTheoDoi.class);
@@ -74,33 +74,34 @@ public class DataApplication implements CommandLineRunner{
 		
 		
 		
-		
+		/*
 		String url = "http://localhost:8080/api/ttgt/add";
 		HttpHeaders headers = new HttpHeaders();
-		headers.set("code","cukqif");
+		headers.set("code","fjpnlx");
 		
 		RestTemplate restTemplate=new RestTemplate();
 		// ----- set chude
 		ChuDe chuDe=new ChuDe();
-		chuDe.setTen("Tinh Hinh Giao Thong");
+		chuDe.setTen("Tin Tuc Giao Thong");
 		// ----- set nguoidung
 		NguoiDung nguoiDung=new NguoiDung();
-		nguoiDung.setUsername("huyhomhinh");
+		nguoiDung.setUsername("phuonganh");
 		NoiDung noiDung=new NoiDung();
 		// -----  set imag
-		File file=new File("F://Tin tuc giao thong/3.jpg");
+		File file=new File("F://Tin tuc giao thong/tt_3.jpg");
 		BufferedImage bufferedImage=ImageIO.read(file);
 		ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
 		ImageIO.write(bufferedImage, "jpg", byteArrayOutputStream);
 		byte[] bytes=byteArrayOutputStream.toByteArray();
 		String image=Base64.encodeBase64String(bytes);
 		noiDung.setChuDe(chuDe);
-		noiDung.setContent("Đây là ở Giải Phóng  đang thông thoáng \n Các bạn nên chọn cung đường này để đi");
+		noiDung.setContent("Chuyển đổi số tạo \"đòn bẩy\" cho doanh nghiệp vận tải phát triển");
 		noiDung.setNguoiDung(nguoiDung);
 		noiDung.setImage(image);
 		HttpEntity<NoiDung> entity = new HttpEntity<NoiDung>(noiDung, headers);
 		ResponseEntity<MaTheoDoi> responseEntity=restTemplate.exchange(url,HttpMethod.POST,entity,MaTheoDoi.class);
 		System.out.print(responseEntity.getStatusCodeValue());
+		*/
 		
 		
 		

@@ -51,6 +51,7 @@ public class NoCheckBefore {
 		ngDung.setUsername(nguoiDung.getUsername());
 		
 		
+		
 		boolean check=noCheckService.addUser(ngDung);
 		if (check == true) {
 			return ResponseEntity.ok(ngDung);

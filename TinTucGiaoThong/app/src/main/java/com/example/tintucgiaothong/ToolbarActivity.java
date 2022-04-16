@@ -73,6 +73,10 @@ public class ToolbarActivity extends Fragment {
             toPost();
             return true;
         }
+        if(check == R.id.it_profile){
+            toProfile();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

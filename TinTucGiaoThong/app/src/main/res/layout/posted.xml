@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostedActivity"
+    android:background="@drawable/background">
+
+    <fragment
+        android:id="@+id/fr_toolbar_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:name="com.example.tintucgiaothong.ToolbarActivity"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fr_toolbar_5"
+        android:layout_centerHorizontal="true"
+        android:text="Chi Tiết Bài Đăng"
+        android:textColor="@color/white"
+        android:textSize="30dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/posted_ry"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fr_toolbar_5"
+        android:layout_marginTop="60dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

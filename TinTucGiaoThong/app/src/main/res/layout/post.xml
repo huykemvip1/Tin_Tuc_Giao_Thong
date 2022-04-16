@@ -107,7 +107,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/bd_input"
-        android:text="Đăng Bài"
-        android:onClick="uploadFile"/>
+        android:onClick="uploadFile"
+        android:text="Đăng Bài" />
 
 </RelativeLayout>

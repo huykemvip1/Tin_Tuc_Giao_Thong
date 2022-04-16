@@ -12,51 +12,59 @@
         android:name="com.example.tintucgiaothong.ToolbarActivity"
         android:id="@+id/fr_toolbar_2"/>
 
-    <ImageView
-        android:id="@+id/image_details"
-        android:layout_width="366dp"
-        android:layout_height="349dp"
-        android:layout_below="@+id/fr_toolbar_2"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_account" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/fr_toolbar_2"
+        android:layout_marginTop="48dp">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <ImageView
+            android:id="@+id/image_details"
+            android:layout_width="366dp"
+            android:layout_height="349dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_account" />
 
-    <TextView
-        android:id="@+id/creator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/image_details"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:text="Nguyen Dinh Huy"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="Nguyen Dinh Huy"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/creator"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="25-07-1998 12-31"
-        android:textColor="@color/white"
-        android:textSize="16dp" />
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/creator"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:text="25-07-1998 12-31"
+            android:textColor="@color/white"
+            android:textSize="16dp" />
 
-    <TextView
-        android:id="@+id/context_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/day"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="44dp"
-        android:clickable="true"
-        android:text="Chi Tiết"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        <TextView
+            android:id="@+id/context_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="44dp"
+            android:clickable="true"
+            android:text="Chi Tiết"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
